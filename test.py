@@ -5,12 +5,9 @@ import scipy as sp
 import scipy.linalg as la
 import numpy as np
 
-import numpy.f2py
-fsource = 'matmult.f95'
+from matmult import mmult
 
-numpy.f2py.compile(fsource, modulename='multmat', verbose=0)
-
-print(multmat.__doc__)
+print(mmult.__doc__)
 
 n = 6
 iterno = 7*100
@@ -42,7 +39,7 @@ print("Scipy dot: time = %.2f sec; flop rate =  Gflops/s"%(t))
 t = time.time()
 for i in range(iterno):
     for j in range(82):
-        C = multmat(A,B)
+        C = mmult(A,B)
 t = time.time() - t
 # f = 2*n**3/t/1e9
 print("My F dot: time = %.2f sec; flop rate =  Gflops/s"%(t))

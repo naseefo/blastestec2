@@ -1,6 +1,6 @@
 
 
-subroutine multmat(C, A, B)
+subroutine mmult(C, A, B)
 ! =====================================================
 ! Uses the sieve of Eratosthenes to compute a logical
 ! array of size n_max, where .true. in element i
@@ -22,4 +22,4 @@ subroutine multmat(C, A, B)
     end do
 
     return
-end subroutine multmat
+end subroutine mmult
